@@ -1,0 +1,63 @@
+<div class="login-page">
+	<div class="form">
+		<form name="regForm" ng-show="newUser">
+			<label for="firstname">First Name</label>
+			<input type="text" id="firstname" name="firstname" ng-model="user.firstname" required  ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" capitalize-first/>
+			<span ng-show="regForm.name.$error.required && regForm.name.$dirty">required</span>
+			<span ng-show="!regForm.username.$error.minLength && !regForm.username.$error.maxLength && regForm.username.$error.pattern && regForm.username.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
+			<span ng-show="!regForm.username.$error.required && (regForm.username.$error.minlength || regForm.username.$error.maxlength) && regForm.username.$dirty">First Name must be between 5 and 20 characters.</span>
+			<br />
+			<label for="lastname">Last Name</label>
+			<input type="text" id="lastname" name="lastname" ng-model="user.lastname" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" capitalize-first
+			 required />
+			<span ng-show="regForm.lastname.$error.required && regForm.lastname.$dirty">required</span>
+			<span ng-show="!regForm.lastname.$error.minLength && !regForm.lastname.$error.maxLength && regForm.lastname.$error.pattern && regForm.lastname.$dirty">Must start with a letter, and contain letters &amp; numbers only.</span>
+			<span ng-show="!regForm.lastname.$error.required && (regForm.lastname.$error.minlength || regForm.lastname.$error.maxlength) && regForm.lastname.$dirty">Last Name must be between 5 and 20 characters.</span>
+			<br />
+
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" ng-model="user.email" required/>
+			<span ng-show="regForm.email.$error.required && regForm.email.$dirty">required</span>
+			<span ng-show="!regForm.email.$error.required && regForm.email.$error.email && regForm.email.$dirty">invalid email</span>
+			<br />
+
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" ng-model="user.password" ng-minlength="3" ng-maxlength="20"
+			 required />
+			<span ng-show="regForm.password.$error.required && regForm.password.$dirty">required</span>
+			<span ng-show="!regForm.password.$error.required && (regForm.password.$error.minlength || regForm.password.$error.maxlength) && regForm.password.$dirty">Passwords must be between 3 and 20 characters.</span>
+			<br />
+
+			<!-- <label for="password_c">Confirm Password</label>
+			<input type="password" id="password_c" name="password_c" ng-model="user.password_c" valid-password-c required />
+			<span ng-show="regForm.password_c.$error.required && regForm.password_c.$dirty">Please confirm your password.</span>
+			<span ng-show="!regForm.password_c.$error.required && regForm.password_c.$error.noMatch || regForm.password.$dirty">Passwords do not match.</span>
+			<br /> -->
+
+			<button type="submit" class="btn" ng-click="createUser(regForm.$valid)">Submit</button>
+
+			<p class="message">Already registered?
+				<a class="pointer" ng-click="loginUser()">Sign In</a>
+			</p>
+		</form>
+		<form class="login-form" id="loginForm" name="loginForm" ng-show="!newUser" novalidate>
+
+			<div class="form-group inputCont" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine }">
+				<input type="email" name="email" class="form-control" ng-model="user.email" ng-value="user.email" placeholder="Email" required>
+				<p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="help-block">Enter a valid email.</p>
+			</div>
+
+			<div class="form-group inputCont" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+				<input type="password" name="password" class="form-control" ng-model="user.password" ng-value="user.password" ng-minlength="3"
+				 placeholder="Password" required>
+				<p ng-show="loginForm.password.$invalid" class="help-block">Enter your password.</p>
+				<p ng-show="loginForm.password.$error.minlength" class="help-block">password is too short.</p>
+			</div>
+
+			<button role="button" ng-click="authUser(loginForm.$valid)">Sign In</button>
+			<p class="message">Not registered?
+				<a class="pointer" ng-click="regUser()">Create an account</a>
+			</p>
+		</form>
+	</div>
+</div>
