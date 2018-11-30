@@ -81,13 +81,6 @@ package.json          --> Node.js specific metadata, including development tools
 package-lock.json     --> Npm specific metadata, including versions of installed development tools dependencies
 ```
 
-**Before starting Protractor, open a separate terminal window and run:**
-
-```
-npm start
-```
-
-
 **Note:**
 If JDK is not already installed, you can download it [here][jdk-download].
 
