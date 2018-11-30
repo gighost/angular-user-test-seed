@@ -87,11 +87,6 @@ package-lock.json     --> Npm specific metadata, including versions of installed
 npm start
 ```
 
-In addition, since Protractor is built upon WebDriver, we need to ensure that it is installed and
-up-to-date. The `angular-seed` project is configured to do this automatically before running the
-end-to-end tests, so you don't need to worry about it. If you want to manually update the WebDriver,
-you can run:
-
 
 **Note:**
 If JDK is not already installed, you can download it [here][jdk-download].
