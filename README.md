@@ -4,6 +4,7 @@ This project is a test application done with back end call to https://reqres.in/
 The update and delete calls do give success as response but the proper updation is seen in the GET all api.
 So any further manipulation in data is not done from client side and data is made to be driven via api calls.
 
+The unit test for this application is not completed, and will be updated as time progress.
 
 ## Getting Started
 
@@ -37,7 +38,6 @@ other front end dependencies. After that, you should find out that you have two 
 your project.
 
 * `node_modules` - contains the npm packages for the tools we need
-* `app/lib` - contains the AngularJS framework files and other front end dependencies
 
 *Note copying the AngularJS files from `node_modules` to `app/lib` makes it easier to serve the
 files by a web server.*
@@ -74,7 +74,7 @@ app/                  --> all of the source files for the application
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
 e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
+  protractor-conf.js    --> Protractor config file 
   scenarios.js          --> end-to-end scenarios to be run by Protractor
 karma.conf.js         --> config file for running unit tests with Karma
 package.json          --> Node.js specific metadata, including development tools dependencies
@@ -94,10 +94,6 @@ you can run:
 
 
 **Note:**
-Under the hood, Protractor uses the [Selenium Standalone Server][selenium], which in turn requires
-the [Java Development Kit (JDK)][jdk] to be installed on your local machine. Check this by running
-`java -version` from the command line.
-
 If JDK is not already installed, you can download it [here][jdk-download].
 
 
