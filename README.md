@@ -1,7 +1,7 @@
 # `angular-user-test-seed` — the seed for AngularJS apps
 
 This project is a test application done with back end call to https://reqres.in/.
-The update and delete calls do give success as response but the proper updation is seen in the GET all api.
+The update and delete calls do give success as response but the proper updation is not seen in the GET all api.
 So any further manipulation in data is not done from client side and data is made to be driven via api calls.
 
 The unit test for this application is not completed, and will be updated as time progress.
